@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+		<add id="Narola_ProductService::productservice" title="Product Service" module="Narola_ProductService" sortOrder="40" resource="Narola_ProductService::productservice" parent="Narola_All::narola_all"/>  
+		<add id="Narola_ProductService::servicemanager" title="Service Manager" module="Narola_ProductService" sortOrder="10" parent="Narola_ProductService::productservice" action="product/service" resource="Narola_ProductService::servicemanager"/> 
+    </menu>
+</config>

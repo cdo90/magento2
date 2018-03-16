@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Narolatheme
+ * @category   Narolatheme
+ * @package    Narola_All
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+		<add id="Narola_All::narola_all" title="Narola" module="Narola_All" sortOrder="13" resource="Narola_All::narola_all"/>
+		<add id="Narola_All::license" title="NISL" module="Narola_All" sortOrder="900" resource="Narola_All::license" parent="Narola_All::narola_all" />
+		<add id="Narola_All::license_manage" title="Licenses" module="Narola_All" sortOrder="6" parent="Narola_All::license" action="adminhtml/system_config/edit/section/veslicense" resource="Narola_All::config_license"/>
+    </menu>
+</config>
