@@ -1,0 +1,27 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/** @var $block Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare */
+?>
+<!--<a href="#"
+   class="action tocompare"
+   title="<?= $block->escapeHtml(__('Add to Compare')) ?>"
+   aria-label="<?= $block->escapeHtml(__('Add to Compare')) ?>"
+   data-post='<?= /* @escapeNotVerified */ $block->getCompareHelper()->getPostDataParams($block->getProduct()) ?>'
+   role="button">
+</a> -->
+	<?php //echo "testd : ".$block->getCompareHelper()->getAddUrl(); ?>
+	<?php //echo "testd : ".$block->getCompareHelper()->$product->getId(); ?>
+	<?php //echo $action_url = $block->getCompareHelper()->getAddUrl(); ?>
+	<?php echo $pro_id = $block->getProduct()->getId(); ?>
+	
+	<label for="addtocompare_id_<?php echo $pro_id; ?>" id="#addtocompare_label">
+	<input type="checkbox" id="addtocompare_id_<?php echo $pro_id; ?>" name="addtocompare_name"  data-post='<?= /* @escapeNotVerified */ $block->getCompareHelper()->getPostDataParams($block->getProduct()) ?>'>
+	<?= /* @escapeNotVerified */ __('Add to Compare') ?>
+	</label>
+	<br>
+

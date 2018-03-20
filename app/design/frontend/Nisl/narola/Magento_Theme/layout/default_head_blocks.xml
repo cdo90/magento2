@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../vendor/magento/framework/Module/etc/module.xsd">
+  <head>
+
+    <css src="css/local-m.css" />
+    <css src="css/local-l.css" media="screen and (min-width: 768px)"/>
+    <css src="css/font-awesome.min.css" />
+    <css src="css/custom-style.css" />
+	<script src="js/jquery-2.2.4.min.js"/>
+  </head>
+</page>

@@ -1,0 +1,102 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+?>
+<div class="custom_container categoryviewpage">
+<?php 
+
+$catid = $block->getCurrentCategory()->getId();
+$subcat = $block->getSubcategory($catid);
+if(count($subcat) > 0 ){
+$custom_slider = "custom_slider";
+$cnt = 0;
+foreach($subcat as $subcat_info){
+		$cnt++;
+		$sub_catid = $subcat_info->getId();
+		$sub_catname = $subcat_info->getName();
+		echo "<h1 class='cat_title'>".$sub_catname."</h1>";
+			
+		$product_info = $block->getSubcategory_product($sub_catid);
+		$curosalID = $custom_slider.'_'.$cnt;
+		
+		?>
+		<div class= "slider-wrapper">
+			<ul id="<?php echo $curosalID; ?>"  class="owl-carousel category-products">
+				<?php 
+						foreach ($product_info as $product) : ?>
+							<li class="category_product_catpage">
+								<div class="pro-img">
+									<img src="<?php echo $this->getBaseUrl()."pub/media/catalog/product".$product->getData('image'); ?>"height="300" width="240">
+								</div>
+								<a href="<?php echo $product->getProductUrl(); ?>">
+									<span class="product-name-center">
+										<span class="product-name-cell">
+											<?php echo $product->getName();?>
+										</span>
+									</span>
+								</a>
+							</li> 
+				<?php   endforeach;?>
+			</ul>
+			</div>
+			<script type="text/javascript">
+			require([
+					'jquery',
+					'owlcarousel'
+				], function () {
+					 'use strict';
+					jQuery.noConflict();
+					jQuery("#<?php echo $curosalID; ?>").owlCarousel({
+					autoplay: true,
+					autoplayTimeout: 5000,
+					autoplayHoverPause: true,
+					loop: true,
+					navRewind: true,
+					nav: true,
+					navText: ["<i class='fa fa-angle-left' aria-hidden='true'></i>","<i class='fa fa-angle-right' aria-hidden='true'></i>"],
+					dots: false,
+					lazy_owl: true,
+					responsive: {
+						0: {
+							items:2
+						},
+						768: {
+							items:3
+						},
+						992: {
+							items:4
+						},
+						1200: {
+							items:4
+						}
+					}
+					});
+					window.dispatchEvent(new Event('resize'));
+				});
+				
+				
+		</script>
+		
+<?php
+}
+}else{
+
+if (!$block->isContentMode() || $block->isMixedMode()):
+    echo $block->getProductListHtml();
+endif;
+}
+
+?>
+</div>
