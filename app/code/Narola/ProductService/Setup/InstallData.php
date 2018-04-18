@@ -27,7 +27,7 @@ class InstallData implements InstallDataInterface
             \Magento\Catalog\Model\Product::ENTITY,
             'product_service_attribute',
             [				
-				'group' => 'General Information',
+				'group' => 'Product Services',
 				'type' => 'varchar',
 				'label' => 'Product Recomanded Services',
 				'input' => 'multiselect',

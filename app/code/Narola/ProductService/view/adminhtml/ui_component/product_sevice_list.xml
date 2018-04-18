@@ -141,7 +141,7 @@
                </item>
            </argument>
        </column>	   
-       <column name="content" >
+       <column name="content">
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">false</item>
@@ -149,7 +149,7 @@
                </item>
            </argument>
        </column>
-       <column name="is_active" >
+       <column name="is_active">
            <argument name="data" xsi:type="array">
                <item name="options" xsi:type="object">Narola\ProductService\Model\Status</item>
                <item name="config" xsi:type="array">

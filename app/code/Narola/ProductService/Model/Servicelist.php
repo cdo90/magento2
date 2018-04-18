@@ -25,7 +25,7 @@ class Servicelist extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSou
     public function getAvailableTemplate()
     {
         $services = $this->_service->getCollection()
-        ->addFieldToFilter('is_active', '1');
+        ->addFieldToFilter('is_active', '1'); 
         $listService = array();
         foreach ($services as $service) {
             $listService[] = array('label' => $service->getTitle(),
